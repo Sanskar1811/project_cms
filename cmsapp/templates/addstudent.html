@@ -1,0 +1,29 @@
+<html>
+<head>
+<title> College ManageMent System  </title>
+<style>
+* {font-size : 40px ; font-family : Century ; }
+body {background-color : azure ; }
+.nav {background-color : black ; }
+.nav a {color : white ;  text-decoration : none ; margin : 5% ; }
+</style>
+</head>
+<body>
+<center>
+<div class="nav">
+<a href="{%  url  'home' %}"> Home Page  </a>
+<a href="{%  url  'showdept' %}"> Department Page  </a>
+<a href="{%  url  'showstud' %}"> Student Page  </a>
+</div>
+<h1> Add Student Page </h1>
+<form method="POST"  autocomplete="off">
+{%  csrf_token  %}
+<table>
+{{  fm.as_table  }}
+</table>
+<input type = "submit"  value="Create Student" />
+</form>
+<h2> {{  msg   }}  </h2>
+</center>
+</body>
+</html>

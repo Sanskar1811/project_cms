@@ -1,0 +1,23 @@
+{%  load static  %}
+<html>
+<head>
+<title> College ManageMent System by Sanskar  </title>
+<style>
+* {font-size : 40px ; font-family : Century ; }
+body {background-color : azure ; }
+.nav {background-color : black ; }
+.nav a {color : white ;  text-decoration : none ; margin : 5% ; }
+</style>
+</head>
+<body>
+<center>
+<div class="nav">
+<a href="{%  url  'home' %}"> Home Page  </a>
+<a href="{%  url  'showdept' %}"> Department Page  </a>
+<a href="{%  url  'showstud' %}"> Student Page  </a>
+</div>
+<h1 style="text-align : center ;color : white;  font-size : 45px ; font-family : Times New Roman ; background-color : red;">Welcome To College Management System   </h1>
+<img src="{% static 'images/College-Management-System.webp' %}"    alt="College Management System"  width="580px;"  height="550px;">
+</center>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+<title> College ManageMent System  </title>
+<style>
+* {font-size : 40px ; font-family : Century ; }
+body {background-color : azure ; }
+.nav {background-color : black ; }
+.nav a {color : white ;  text-decoration : none ; margin : 5% ; }
+</style>
+</head>
+<body>
+<center>
+<div class="nav">
+<a href="{%  url  'home' %}"> Home Page  </a>
+<a href="{%  url  'showdept' %}"> Department Page  </a>
+<a href="{%  url  'showstud' %}"> Student Page  </a>
+</div>
+
+<h1> Student Page </h1>
+<a href="{%  url 'addstudent'  %}" > Add Student </a>
+<br> <br>
+
+<table border = "5"  style="width : 80%;">
+<tr>
+	<th> Roll_No  </th>
+	<th> Name  </th>
+	<th> Department  </th>
+	<th> Delete  </th>
+</tr>
+{%  for d in data  %}
+
+<tr style="text-align : center;">
+<td> {{   d.Student_Id  }}</td> 
+<td> {{   d.Student_Name  }}</td> 
+<td> {{   d.Student_Department  }}</td> 
+<td> <a href="{%  url  'removestudent' id=d.Student_Id  %}"  onclick="return confirm('r u sure ?? ')"> Delete </a></td>
+</tr>
+
+{%  empty  %}
+<tr style="text-align : center;">
+<td colspan=4> No Records Found </td>
+</tr>
+
+{%  endfor  %}
+</table>
+</center>
+</body>
+</html>
